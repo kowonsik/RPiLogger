@@ -22,8 +22,8 @@
 
 1. 설치
   - 자바 설정
-   java -version
-   which java
+  - java -version
+  - which java
 
    vi /etc/profile
 
