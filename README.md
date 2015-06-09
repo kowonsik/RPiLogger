@@ -27,71 +27,71 @@
 
     - vi /etc/profile
 
-    - JAVA_HOME=/usr/
-    - export JAVA_HOME
-    - export PATH=$PATH:$JAVA_HOME/bin
+      - JAVA_HOME=/usr/
+      - export JAVA_HOME
+      - export PATH=$PATH:$JAVA_HOME/bin
 
     - source /etc/profile
 
   - hbase 설치
-   cd /usr/local
-   mkdir data
-   wget http://www.apache.org/dist/hbase/stable/hbase-1.0.1.1-bin.tar.gz
-   tar xvfz hbase-1.0.1.1-bin.tar.gz
-   cd hbase-1.0.1.1
+    - cd /usr/local
+    - mkdir data
+    - wget http://www.apache.org/dist/hbase/stable/hbase-1.0.1.1-bin.tar.gz
+    - tar xvfz hbase-1.0.1.1-bin.tar.gz
+    - cd hbase-1.0.1.1
 
-   hbase_rootdir=${TMPDIR-'/usr/local/data'}/tsdhbase
-   iface=lo`uname | sed -n s/Darwin/0/p`
+    - hbase_rootdir=${TMPDIR-'/usr/local/data'}/tsdhbase
+    - iface=lo`uname | sed -n s/Darwin/0/p`
 
-   vi conf/hbase-site.xml
+    - vi conf/hbase-site.xml
 
-   <?xml version="1.0"?>
-   <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
-   <configuration>
-    <property>
-    <name>hbase.rootdir</name>
-    <value>file:/DIRECTORY/hbase</value>
-    </property>
-    <property>
-    <name>hbase.zookeeper.property.dataDir</name>
-    <value>/DIRECTORY/zookeeper</value>
-    </property>
-   </configuration>
+     <?xml version="1.0"?>
+     <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+     <configuration>
+       <property>
+         <name>hbase.rootdir</name>
+         <value>file:/DIRECTORY/hbase</value>
+       </property>
+       <property>
+         <name>hbase.zookeeper.property.dataDir</name>
+         <value>/DIRECTORY/zookeeper</value>
+        </property>
+     </configuration>
 
-   위 DIRECTORY에는 hbase를 구동할 디렉토리명을 써준다. (보통 /tmp/hbase-[version명]으로 한다고 함)
+     - 위 DIRECTORY에는 hbase를 구동할 디렉토리명을 써준다. (보통 /tmp/hbase-[version명]으로 한다고 함)
 
-   ./bin/start-hbase.sh
+    - ./bin/start-hbase.sh
 
   - GnuPlot 설치
-   cd /usr/local
-   apt-get install gcc
-   apt-get install libgd2-xpm-dev
-   wget http://sourceforge.net/projects/gnuplot/files/gnuplot/4.6.3/gnuplot-4.6.3.tar.gz
-   tar zxvf /gnuplot-4.6.3.tar.gz
-   cd gnuplot-4.6.3
-   ./configure
-   make install
-   apt-get install gnuplot
+     - cd /usr/local
+     - apt-get install gcc
+     - apt-get install libgd2-xpm-dev
+     - wget http://sourceforge.net/projects/gnuplot/files/gnuplot/4.6.3/gnuplot-4.6.3.tar.gz
+     - tar zxvf /gnuplot-4.6.3.tar.gz
+     - cd gnuplot-4.6.3
+     - ./configure
+     - make install
+     - apt-get install gnuplot
 
-   apt-get install dh-autoreconf
+     - apt-get install dh-autoreconf
 
   - openTSDB 설치
-   cd /usr/local
-   git clone git://github.com/OpenTSDB/opentsdb.git
+     - cd /usr/local
+     - git clone git://github.com/OpenTSDB/opentsdb.git
 
-   cd opentsdb
-   ./build.sh
+     - cd opentsdb
+     - ./build.sh
 
-   env COMPRESSION=NONE HBASE_HOME=/usr/local/hbase-1.0.0 ./src/create_table.sh
+     - env COMPRESSION=NONE HBASE_HOME=/usr/local/hbase-1.0.0 ./src/create_table.sh
 
-   tsdtmp=${TMPDIR-'/usr/local/data'}/tsd
-   mkdir -p "$tsdtmp"
-   ./build/tsdb tsd --port=4242 --staticroot=build/staticroot --cachedir=/usr/local/data --auto-metric
+     - tsdtmp=${TMPDIR-'/usr/local/data'}/tsd
+     - mkdir -p "$tsdtmp"
+     - ./build/tsdb tsd --port=4242 --staticroot=build/staticroot --cachedir=/usr/local/data --auto-metric
 
   - Tcollector 설치
-   git clone git://github.com/OpenTSDB/tcollector.git
-   cd tcollector
-   vi startstop
+     - git clone git://github.com/OpenTSDB/tcollector.git
+     - cd tcollector
+     - vi startstop
 
-   #TSD_HOST=dns.name.of.tsd -> TSD_HOST=192.168.x.x (ip주소)
+     - #TSD_HOST=dns.name.of.tsd -> TSD_HOST=192.168.x.x (ip주소)
 
