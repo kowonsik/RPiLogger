@@ -21,4 +21,16 @@
   - 소프트웨어
 
 1. 설치
-  - 필요사항
+  - 자바 설정
+java -version
+which java
+
+vi /etc/profile
+
+JAVA_HOME = /usr
+export JAVA_HOME
+export PATH=$PATH:$JAVA_HOME/bin
+
+source /etc/profile
+
+   - hbase 설치
