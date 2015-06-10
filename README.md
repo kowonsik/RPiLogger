@@ -19,13 +19,15 @@
 
 1. 규격
   - 하드웨어
-    - 라즈베리파이2
+    - 라즈베리파이2 + SD카드 + WiFi 동글 + MicroUSB 전원케이블
     - CO2 + 온습도 + LED 보드
     - LED 보드
+    
     - Kmote
+    - 통합센서
     
   - 소프트웨어
-    - Raspbian : 라즈베리팡 OS
+    - Raspbian : 라즈베리파이 OS
     - openTSDB : 시계열 데이터베이스
     - co2_rest.py : 라즈베리파이의 GIO핀에 연결되어 있는 co2 보드에서 센싱한 데이터를 받고 상태를 LED로 표시하며 원격과 로컬에 전송
     - serial_ttyUSB0_rest.py : USB 포트에 연결되어 있는 베이스노드를 통해 들어오는 센싱 데이터를 원격과 로컬에 전송
