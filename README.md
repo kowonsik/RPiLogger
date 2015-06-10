@@ -58,16 +58,16 @@
 
   - hbase 설치
 ```
-    - cd /usr/local
-    - mkdir data
-    - wget http://www.apache.org/dist/hbase/stable/hbase-1.0.1.1-bin.tar.gz
-    - tar xvfz hbase-1.0.1.1-bin.tar.gz
-    - cd hbase-1.0.1.1
+    cd /usr/local
+    mkdir data
+    wget http://www.apache.org/dist/hbase/stable/hbase-1.0.1.1-bin.tar.gz
+    tar xvfz hbase-1.0.1.1-bin.tar.gz
+    cd hbase-1.0.1.1
 
-    - hbase_rootdir=${TMPDIR-'/usr/local/data'}/tsdhbase
-    - iface=lo`uname | sed -n s/Darwin/0/p`
+    hbase_rootdir=${TMPDIR-'/usr/local/data'}/tsdhbase
+    iface=lo`uname | sed -n s/Darwin/0/p`
 
-    - vi conf/hbase-site.xml
+    vi conf/hbase-site.xml
 
      <?xml version="1.0"?>
      <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
