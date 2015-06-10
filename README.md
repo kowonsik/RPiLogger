@@ -23,16 +23,18 @@
 
 1. 설치
   - 자바 설정
-    - java -version
-    - which java
+```
+    java -version
+    which java
 
-    - vi /etc/profile
+    vi /etc/profile
 
-      - JAVA_HOME=/usr/
-      - export JAVA_HOME
-      - export PATH=$PATH:$JAVA_HOME/bin
+      JAVA_HOME=/usr/
+      export JAVA_HOME
+      export PATH=$PATH:$JAVA_HOME/bin
 
-    - source /etc/profile
+    source /etc/profile
+```
 
   - hbase 설치
     - cd /usr/local
