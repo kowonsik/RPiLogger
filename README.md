@@ -127,7 +127,6 @@
 
      #TSD_HOST=dns.name.of.tsd -> TSD_HOST=192.168.x.x (ip주소)
 ```
-
 1. 설치 방법
      - OS 설치
      - Hadoop 설치
