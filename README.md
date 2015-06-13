@@ -131,7 +131,7 @@
      #TSD_HOST=dns.name.of.tsd -> TSD_HOST=192.168.x.x (ip주소)
 ```
 
-1. openTSDB 자동 실행
+[openTSDB 자동 실행]
 
 ```
      vi /etc/rc.local
