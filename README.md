@@ -43,9 +43,7 @@
         - 센싱데이터 로컬에 저장 및 원격 전송
 
 1. 라즈베리파이에 시계열데이터베이스(openTSDB)설치
-- 자바 설치
-- Hadoop 설치
-    
+
 - 자바 설정
 ```
     java -version
@@ -131,7 +129,7 @@
      #TSD_HOST=dns.name.of.tsd -> TSD_HOST=192.168.x.x (ip주소)
 ```
 
-[openTSDB 자동 실행]
+< openTSDB 자동 실행 >
 
 ```
      vi /etc/rc.local
