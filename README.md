@@ -131,23 +131,21 @@
      #TSD_HOST=dns.name.of.tsd -> TSD_HOST=192.168.x.x (ip주소)
 ```
 
-2. openTSDB 자동 실행
+1. openTSDB 자동 실행
 
 ```
-vi /etc/rc.local
+     vi /etc/rc.local
 
-아래 내용 입력
+     아래 내용 입력
 
-cd /usr/local/data/hbase-1.0.1.1/bin/
-sudo ./stop-hbase.sh
-sudo ./start-hbase.sh
+     cd /usr/local/data/hbase-1.0.1.1/bin/
+     sudo ./stop-hbase.sh
+     sudo ./start-hbase.sh
 
-printf "\033[32m \n\n            making table           \n\n\033[0m"
-
-cd /usr/local/opentsdb
-env COMPRESSION=NONE HBASE_HOME=/usr/local/data/hbase-1.0.1.1 ./src/create_table.sh
-tsdtmp=${TMPDIR-'/usr/local/data'}/tsd
-nohup ./build/tsdb tsd --port=4242 --staticroot=build/staticroot --cachedir=/usr/local/data --auto-metric &
+     cd /usr/local/opentsdb
+     env COMPRESSION=NONE HBASE_HOME=/usr/local/data/hbase-1.0.1.1 ./src/create_table.sh
+     tsdtmp=${TMPDIR-'/usr/local/data'}/tsd
+     nohup ./build/tsdb tsd --port=4242 --staticroot=build/staticroot --cachedir=/usr/local/data --auto-metric &
 
 ```
 
