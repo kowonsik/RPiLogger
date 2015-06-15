@@ -45,7 +45,7 @@
 1. 라즈베리파이에 시계열데이터베이스(openTSDB)설치
 
 - 자바 설정
-```
+<pre>
     java -version
     which java
 
@@ -56,7 +56,7 @@
       export PATH=$PATH:$JAVA_HOME/bin
 
     source /etc/profile
-```
+</pre>
 
   - hbase 설치
 ```
