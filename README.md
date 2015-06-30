@@ -50,7 +50,7 @@
     which java
 
     vi /etc/profile
-
+      제일 마지막 줄에 아래 3출 추가
       JAVA_HOME=/usr/
       export JAVA_HOME
       export PATH=$PATH:$JAVA_HOME/bin
