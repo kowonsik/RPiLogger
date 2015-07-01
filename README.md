@@ -70,13 +70,15 @@
     iface=lo`uname | sed -n s/Darwin/0/p`
 
     vi conf/hbase-site.xml
-    configuration 안에 내용을 넣어주면 됨
+    
+    configuration 태그 사이의 내용을 넣어주면 됨
+    
      <?xml version="1.0"?>
      <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
      <configuration>
        <property>
          <name>hbase.rootdir</name>
-         <value>file:/DIRECTORY/hbase</value>
+         <value>file:///DIRECTORY/hbase</value>
        </property>
        <property>
          <name>hbase.zookeeper.property.dataDir</name>
@@ -84,7 +86,6 @@
         </property>
      </configuration>
 ```
-     위 DIRECTORY에는 hbase를 구동할 디렉토리명을 써준다. (보통 /tmp/hbase-[version명]으로 한다고 함)
 
 ```
     ./bin/start-hbase.sh
