@@ -118,11 +118,20 @@
 
      tsdtmp=${TMPDIR-'/usr/local/data'}/tsd
      mkdir -p "$tsdtmp"
+     
+     여기서 screen 으로 
+     screen -dmS tsdb
+     screen -list
+     tsdb로 -r tsdb
+     
      ./build/tsdb tsd --port=4242 --staticroot=build/staticroot --cachedir=/usr/local/data --auto-metric
+     
+     실행 후에는 Ctl + a + d 로 빠져나옴
 ```
 
   - Tcollector 설치
 ```
+     cd /usr/local
      git clone git://github.com/OpenTSDB/tcollector.git
      cd tcollector
      vi startstop
