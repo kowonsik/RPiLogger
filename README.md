@@ -70,7 +70,7 @@
     iface=lo`uname | sed -n s/Darwin/0/p`
 
     vi conf/hbase-site.xml
-
+    configuration 안에 내용을 넣어주면 됨
      <?xml version="1.0"?>
      <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
      <configuration>
@@ -96,7 +96,7 @@
      apt-get install gcc
      apt-get install libgd2-xpm-dev
      wget http://sourceforge.net/projects/gnuplot/files/gnuplot/4.6.3/gnuplot-4.6.3.tar.gz
-     tar zxvf /gnuplot-4.6.3.tar.gz
+     tar zxvf gnuplot-4.6.3.tar.gz
      cd gnuplot-4.6.3
      ./configure
      make install
