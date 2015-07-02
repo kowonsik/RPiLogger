@@ -136,7 +136,8 @@
      cd tcollector
      vi startstop
 
-     #TSD_HOST=dns.name.of.tsd -> TSD_HOST=127.0.0.1 (ip주소)
+     #TSD_HOST=dns.name.of.tsd 이부분에서 주석해제하고 IP를 적어주면 됨(아래처럼)
+     TSD_HOST=127.0.0.1 (ip주소)
 ```
 
 < openTSDB 자동 실행 >
