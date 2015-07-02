@@ -147,7 +147,7 @@
 
      아래 내용 입력
 
-     cd /usr/local/data/hbase-1.0.1.1/bin/
+     cd /usr/local/hbase-1.0.1.1/bin/
      sudo ./stop-hbase.sh
      sudo ./start-hbase.sh
 
