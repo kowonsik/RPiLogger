@@ -114,9 +114,10 @@
      cd opentsdb
      ./build.sh
 
-     env COMPRESSION=NONE HBASE_HOME=/usr/local/hbase-1.0.1.1 ./src/create_table.sh
 
-     // 여기서 부터는 자동실행할시 안해는 되는 부분임 //
+     // 여기서 부터는 자동실행 할시 안해도 되는 부분임 //
+     
+     env COMPRESSION=NONE HBASE_HOME=/usr/local/hbase-1.0.1.1 ./src/create_table.sh
      
      tsdtmp=${TMPDIR-'/usr/local/data'}/tsd
      mkdir -p "$tsdtmp"
