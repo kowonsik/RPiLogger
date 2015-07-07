@@ -116,6 +116,8 @@
 
      env COMPRESSION=NONE HBASE_HOME=/usr/local/hbase-1.0.1.1 ./src/create_table.sh
 
+     // 여기서 부터는 자동실행할시 안해는 되는 부분임 //
+     
      tsdtmp=${TMPDIR-'/usr/local/data'}/tsd
      mkdir -p "$tsdtmp"
      
@@ -127,6 +129,8 @@
      ./build/tsdb tsd --port=4242 --staticroot=build/staticroot --cachedir=/usr/local/data --auto-metric
      
      실행 후에는 Ctl + a + d 로 빠져나옴
+     
+     // 여기까지 //
 ```
 
   - Tcollector 설치
@@ -145,18 +149,7 @@
 < openTSDB 자동 실행 >
 
 ```
-     vi /etc/rc.local
-
-     아래 내용 입력
-
-     cd /usr/local/hbase-1.0.1.1/bin/
-     sudo ./stop-hbase.sh
-     sudo ./start-hbase.sh
-
-     cd /usr/local/opentsdb
-     env COMPRESSION=NONE HBASE_HOME=/usr/local/hbase-1.0.1.1 ./src/create_table.sh
-     tsdtmp=${TMPDIR-'/usr/local/data'}/tsd
-     nohup ./build/tsdb tsd --port=4242 --staticroot=build/staticroot --cachedir=/usr/local/data --auto-metric &
+    첨부된 rc.local 파일 참조
 
 ```
 
