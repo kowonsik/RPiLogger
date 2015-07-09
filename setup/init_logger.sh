@@ -5,8 +5,6 @@
 echo "Help: source init_logger.sh co <-- checkout" 
 echo "      source init_logger.sh up <-- update" 
 
-export gitdnpath='https://raw.githubusercontent.com/kowonsik/RPiLogger/master/setup'
-
 mkdir devel/Logger
 cd devel/Logger/
 
@@ -17,10 +15,9 @@ git config --global user.name 'kowonsik'
 
 git config --global user.email 'kows17710@gmail.com'
 
-git remote add origin https://github.com/kowonsik/RPiLogger.git
+git remote add origin 'https://github.com/kowonsik/RPiLogger.git'
 
 git pull -u origin master
-
 
 
 if [ $1 = 'co' ]; 
@@ -37,5 +34,4 @@ else
     echo ".... no action... please add argument "
 fi
 
-unset gitdnpath
 echo ".... ending init.sh"
