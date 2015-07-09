@@ -150,7 +150,7 @@
 < openTSDB 자동 실행 >
 
 ```
-    첨부된 rc.local 파일 참조
+    첨부된 /setup/rc.local 파일 참조
 
 ```
 
