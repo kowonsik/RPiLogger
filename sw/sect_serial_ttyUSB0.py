@@ -9,8 +9,6 @@ import serial
 state = 0
 packet =''
 available = " "
-test = ""
-test2 = ""
 
 def list_serial_ports():
     global availalbe 
