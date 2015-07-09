@@ -2,8 +2,7 @@
 # Author: jeonghoon.kang@gmail.com
 # Modification : kows17710@gmail.com
 
-echo "Help: source init_logger.sh co <-- checkout" 
-echo "      source init_logger.sh up <-- update" 
+echo "Help: source init_logger.sh 
 
 mkdir devel/Logger
 cd devel/Logger/
@@ -19,19 +18,9 @@ git remote add origin 'https://github.com/kowonsik/RPiLogger.git'
 
 git pull -u origin master
 
+source ./setup/setup_apt.sh
+source ./setup/setup_shell.sh
+source ./setup/setup_code.sh co
 
-if [ $1 = 'co' ]; 
-then
-    echo ".... checking out"
-    source ./setup/setup_apt.sh
-    source ./setup/setup_shell.sh
-    source ./setup/setup_code.sh co
-elif [ $1 = 'up' ]; 
-then
-    echo ".... update"
-    ./setup_code.sh up
-else
-    echo ".... no action... please add argument "
-fi
 
 echo ".... ending init.sh"
