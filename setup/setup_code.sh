@@ -10,7 +10,7 @@ if [ $1 = 'up' ]; then
 elif [ $1 = 'co' ]; then
     echo "... installing"
     cd
-    svn co http://github.com/jeonghoonkang/BerePi/Logger/trunk devel/Logger/  
+    svn co http://github.com/jeonghoonkang/BerePi/Logger/ devel/Logger/  
     svn co svn://125.7.128.53/danalytics --username=tinyos
     cd
 else
