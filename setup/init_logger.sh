@@ -7,6 +7,9 @@ echo "      source init_logger.sh up <-- update"
 
 export gitdnpath='https://raw.githubusercontent.com/kowonsik/RPiLogger/master/setup'
 
+mkdir devel/Logger
+cd devel/Logger/
+
 if [ $1 = 'co' ]; 
 then
     echo ".... checking out"
