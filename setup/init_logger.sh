@@ -2,7 +2,7 @@
 # Author: jeonghoon.kang@gmail.com
 # Modification : kows17710@gmail.com
 
-echo "Help: source init_logger.sh 
+echo "start init_logger.sh" 
 
 mkdir devel/Logger
 cd devel/Logger/
