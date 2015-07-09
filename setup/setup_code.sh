@@ -1,9 +1,9 @@
 #!/bin/bash
 #Author: jeonghoonkang http://github.com/jeonghoonkang
 
-export gitdnpath='https://raw.githubusercontent.com/kowonsik/RPiLogger/master/sw'
-
 cd devel/Logger
+
+git clone 'http://github.com/kowonsik/RPiLogger.git
 
 if [ $1 = 'up' ]; then
     echo "... updating"
