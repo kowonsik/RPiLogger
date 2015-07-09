@@ -22,5 +22,6 @@ source ./setup/setup_apt.sh
 source ./setup/setup_shell.sh
 source ./setup/setup_code.sh co
 
+cd sw
 
 echo ".... ending init.sh"
