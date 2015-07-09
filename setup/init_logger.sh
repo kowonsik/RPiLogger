@@ -23,9 +23,9 @@ git pull -u origin master
 if [ $1 = 'co' ]; 
 then
     echo ".... checking out"
-    source ./setup_apt.sh
-    source ./setup_shell.sh
-    source ./setup_code.sh co
+    source ./setup/setup_apt.sh
+    source ./setup/setup_shell.sh
+    source ./setup/setup_code.sh co
 elif [ $1 = 'up' ]; 
 then
     echo ".... update"
