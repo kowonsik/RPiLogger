@@ -10,6 +10,14 @@ export gitdnpath='https://raw.githubusercontent.com/kowonsik/RPiLogger/master/se
 mkdir devel/Logger
 cd devel/Logger/
 
+
+git init
+git config --global user.name 'kowonsik' git config --global user.email 'kows17710@gmail.com'
+git remote add origin https://github.com/kowonsik/RPiLogger.git
+git push -u origin master
+
+
+
 if [ $1 = 'co' ]; 
 then
     echo ".... checking out"
