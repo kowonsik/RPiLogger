@@ -12,18 +12,20 @@ cd devel/Logger/
 
 
 git init
-git config --global user.name 'kowonsik' git config --global user.email 'kows17710@gmail.com'
+
+git config --global user.name 'kowonsik'
+
+git config --global user.email 'kows17710@gmail.com'
+
 git remote add origin https://github.com/kowonsik/RPiLogger.git
-git push -u origin master
+
+git pull -u origin master
 
 
 
 if [ $1 = 'co' ]; 
 then
     echo ".... checking out"
-    wget -N $gitdnpath/setup_shell.sh
-    wget -N $gitdnpath/setup_apt.sh
-    wget -N $gitdnpath/setup_code.sh
     source ./setup_apt.sh
     source ./setup_shell.sh
     source ./setup_code.sh co
