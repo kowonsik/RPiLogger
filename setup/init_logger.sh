@@ -20,7 +20,8 @@ git pull -u origin master
 
 source ./setup/setup_apt.sh
 source ./setup/setup_shell.sh
-source ./sw/code_up.sh co
+
+source ./code_up_down.sh co
 
 cd sw
 
