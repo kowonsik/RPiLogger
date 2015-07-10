@@ -34,10 +34,10 @@ wget -N $vimjelly_file
 sudo mv jellybeans.vim /usr/share/vim/vim73/colors
 fi
 
-export rc_file=$DNPATH/rc.local
-wget -N $rc_file
-sudo mv rc.local /etc
-sudo chmod 775 /etc/rc.local
+#export rc_file=$DNPATH/rc.local
+#wget -N $rc_file
+#sudo mv rc.local /etc
+#sudo chmod 775 /etc/rc.local
 
 unset DNPATH
 unset bashrc_file

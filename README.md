@@ -150,7 +150,7 @@
 < openTSDB 자동 실행 >
 
 ```
-    첨부된 rc.local 파일 참조
+    첨부된 /setup/rc.local 파일 참조
 
 ```
 
@@ -164,7 +164,9 @@
 ```
 -----
 < stalk >
+```
     로거 : python talk.py server LOGGER-001-4242 localhost 4242
     놋북 : python talk.py client LOGGER-001-4242 4242
     웹   : localhost:4242
+```
     

@@ -58,14 +58,8 @@ sudo ./start-hbase.sh
 
 cd /usr/local/opentsdb
 JAVA_HOME=/usr COMPRESSION="NONE" HBASE_HOME="/usr/local/hbase-1.0.1.1" ./src/create_table.sh
-<<<<<<< HEAD
 tsdtmp=${TMPDIR-'/usr/local/data'}/tsd 
 screen -dmS openTSDB sudo ./build/tsdb tsd --port=4242 --staticroot=build/staticroot --cachedir=/usr/local/data --auto-metric &
-=======
-tsdtmp=${TMPDIR-'/usr/local/data'}/tsd
-
-screen -dmS tsdb sudo ./build/tsdb tsd --port=4242 --staticroot=build/staticroot --cachedir=/usr/local/data --auto-metric &
->>>>>>> 6873cdac28adb0f6462891f1185a4c6274f0c282
 
 cd /usr/local/tcollector
 sudo ./startstop start
