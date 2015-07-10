@@ -40,13 +40,14 @@ fi
 #####################################################################
 echo "make run STALK"
 
-/home/pi/start.sh
+#/home/pi/start.sh
+/home/pi/start_22_4242.sh
 cd
 #cd /home/pi/devel/danalytics/thingsweb/stalk/client/
 #screen -dmS volotestssh python /home/pi/devel/danalytics/thingsweb/stalk/client/app.py register $(hostname) localhost 22 &
 #####################################################################
 
-sudo python /home/pi/devel/BerePi/apps/check/monitor.py &
+#sudo python /home/pi/devel/BerePi/apps/check/monitor.py &
 
 #echo "make run ntpdate sw"
 #please do it last, sometimes ntp.ubuntu.com is down
@@ -58,9 +59,8 @@ sudo ./start-hbase.sh
 
 cd /usr/local/opentsdb
 JAVA_HOME=/usr COMPRESSION="NONE" HBASE_HOME="/usr/local/hbase-1.0.1.1" ./src/create_table.sh
-tsdtmp=${TMPDIR-'/usr/local/data'}/tsd
-
-screen -dmS tsdb sudo ./build/tsdb tsd --port=4242 --staticroot=build/staticroot --cachedir=/usr/local/data --auto-metric &
+tsdtmp=${TMPDIR-'/usr/local/data'}/tsd 
+sudo screen -dmS tsdb ./build/tsdb tsd --port=4242 --staticroot=build/staticroot --cachedir=/usr/local/data --auto-metric &
 
 cd /usr/local/tcollector
 sudo ./startstop start
