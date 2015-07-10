@@ -63,7 +63,7 @@ def sese(s):
         v3 = tmp * 10 
         t = int(time.time()) 
         
-        if v1 < 50 :
+        if -25 < v1 < 50 :
         	print "gyu_RC1_thl.temperature %d %f nodeid=%d" % ( t, v1, bigEndian( nodeID ) )
         if 0 < v2 < 100 :
         	print "gyu_RC1_thl.humidity %d %f nodeid=%d" % ( t, v2, bigEndian( nodeID ) )
