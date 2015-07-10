@@ -5,7 +5,8 @@
 if [ $1 = 'up' ]; then
     echo "... updating"
     
-    git add sect_serial_ttyUSB0.py
+    #git add sect_serial_ttyUSB0.py
+    git add ./
     
     git commit -m "by wonsik"
     git push -u origin master
