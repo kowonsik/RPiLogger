@@ -62,9 +62,13 @@ def sese(s):
         tmp = (light * 100) / 75 
         v3 = tmp * 10 
         t = int(time.time()) 
-        print "gyu_RC1_thl.temperature %d %f nodeid=%d" % ( t, v1, bigEndian( nodeID ) ) 
-        print "gyu_RC1_thl.huumidity %d %f nodeid=%d" % ( t, v2, bigEndian( nodeID ) ) 
-        print "gyu_RC1_thl.light %d %f nodeid=%d" % ( t, v3, bigEndian( nodeID ) ) 
+        
+        if v1 < 50 :
+        	print "gyu_RC1_thl.temperature %d %f nodeid=%d" % ( t, v1, bigEndian( nodeID ) )
+        if 0 < v2 < 100 :
+        	print "gyu_RC1_thl.humidity %d %f nodeid=%d" % ( t, v2, bigEndian( nodeID ) )
+        if 0 < v3 < 7000 :
+        	print "gyu_RC1_thl.light %d %f nodeid=%d" % ( t, v3, bigEndian( nodeID ) ) 
 
     elif type == "0070" : # TH 
         temperature = bigEndian( s[48:52] ) 
@@ -77,9 +81,12 @@ def sese(s):
         v3 = tmp
 
         t = int(time.time())
-        print "gyu_RC1_thl.temperature %d %f nodeid=%d" % ( t, v1, bigEndian( nodeID ) )
-        print "gyu_RC1_thl.humidity %d %f nodeid=%d" % ( t, v2, bigEndian( nodeID ) )
-        print "gyu_RC1_thl.light %d %f nodeid=%d" % ( t, v3, bigEndian( nodeID ) )
+        if v1 < 50 :
+        	print "gyu_RC1_thl.temperature %d %f nodeid=%d" % ( t, v1, bigEndian( nodeID ) )
+        if 0 < v2 < 100 :
+        	print "gyu_RC1_thl.humidity %d %f nodeid=%d" % ( t, v2, bigEndian( nodeID ) )
+        if 0 < v3 < 7000 :
+        	print "gyu_RC1_thl.light %d %f nodeid=%d" % ( t, v3, bigEndian( nodeID ) )
 
     elif type == "0065":
         pass
