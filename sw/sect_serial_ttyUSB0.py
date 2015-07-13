@@ -74,15 +74,18 @@ def sese(s):
         temperature = bigEndian( s[48:52] ) 
         humidity = bigEndian( s[52:56] )
         light = bigEndian( s[56:60] )
-        v1 = -46.85 + 0.01 * temperature
+        #v1 = -46.85 + 0.01 * temperature
         tmp = -6 + 125 * humidity / 4095
         v2 = tmp
         tmp = (light * 1.017)
         v3 = tmp
+        
+        v1 = -46.85 + 175.72 * float(temperature) / pow(2,16)
+    	#v2 = -6 + 125 * float(humidity) / pow(2,16)
 
         t = int(time.time())
         if v1 < 50 :
-        	print "gyu_RC1_thl.temperature %d %f nodeid=%d" % ( t, v1, bigEndian( nodeID ) )
+        	print "gyu_RC1_thl.temperature %d %f nodeid=%d" % ( t, v1*(-1), bigEndian( nodeID ) )
         if 0 < v2 < 100 :
         	print "gyu_RC1_thl.humidity %d %f nodeid=%d" % ( t, v2, bigEndian( nodeID ) )
         if 0 < v3 < 7000 :
