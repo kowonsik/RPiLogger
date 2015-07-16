@@ -1,5 +1,4 @@
-# README.md
-
+# INSTALL.md
 
 ## rc.local ##
 위치 : /etc/rc.local
