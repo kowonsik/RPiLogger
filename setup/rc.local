@@ -23,7 +23,8 @@ fi
 #####################################################################
 #cd /home/pi/devel/danalytics/raspi/hw_driver/sensor/dust/
 #screen -dms dust sudo python /home/pi/devel/danalytics/raspi/hw_driver/sensor/dust/dust_gp2y1010.py
-#screen -dms co2 sudo python /home/pi/devel/danalytics/raspi/hw_driver/sensor/co2/t110/co2_t110_3v.py
+
+screen -dms co2 sudo python /home/pi/devel/BerePi/apps/BereCO2post/BereCO2post.py
 
 #####################################################################
 # Using LED Booting : BerePi
