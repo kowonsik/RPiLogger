@@ -4,6 +4,7 @@
 
 echo "start init_logger.sh" 
 
+cd /home/pi
 mkdir devel/Logger
 cd devel/Logger/
 
