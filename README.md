@@ -170,5 +170,12 @@
     웹   : localhost:4242
     
     채널 : http://125.7.128.54/stalk/master/admin/api/entry/
+    
+    stalk ddns 안될경우---
+    
+    sudo service stalk restart
+    sudo service stalk-binder restart
+    sudo service stlak-revproxy restart
+    sudo service nginx restart
 ```
     
