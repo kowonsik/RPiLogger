@@ -11,6 +11,8 @@ packet =''
 available = " "
 test=""
 
+ETYPE_VALUE_MAX = 8000
+
 def list_serial_ports():
     global availalbe 
     if os.name == 'posix' :
@@ -42,6 +44,21 @@ def littleEndian(s):
 		res <<= 8
 		res += eval('0x' + s2)
 	return res
+
+def swapBytes(s):
+    assert len(s) == 8, s
+    res = s[2:4] + s[0:2] + s[6:8] + s[4:6]
+    assert len(res) == 8, s + "->" + res
+    return res
+
+def toFloat(s):
+    assert len(s) == 8, s
+
+    hex = '"' + '\\x' + s[0:2] + '\\x' + s[2:4] + '\\x' + s[4:6] + '\\x' + s[6:8] + '"'
+    hex = eval( hex )
+    res = struct.unpack( 'f', hex )[0]
+    return res
+
 
 def sese(s):
 
