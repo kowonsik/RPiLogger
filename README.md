@@ -62,7 +62,8 @@
 ```
     cd /usr/local
     mkdir data
-    wget http://www.apache.org/dist/hbase/stable/hbase-1.0.1.1-bin.tar.gz
+    wget http://www.apache.org/dist/hbase/stable/hbase-1.1.2-bin.tar.gz
+         http://www.apache.org/dist/hbase/stable/hbase-1.0.1.1-bin.tar.gz
     tar xvfz hbase-1.0.1.1-bin.tar.gz
     cd hbase-1.0.1.1
 
