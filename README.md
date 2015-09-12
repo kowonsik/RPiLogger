@@ -47,6 +47,7 @@
 - 자바 설정
 <pre>
     java -version
+    (버전 몇이면 되는지? 기존 BerePi JAVA로 사용 가능한지? 아니면 기존 삭제 및 새롭게 설치는 어떻게?)
     which java
 
     vi /etc/profile
