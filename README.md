@@ -25,6 +25,9 @@
     - Kmote
     - 통합센서
     
+![pic](https://raw.githubusercontent.com/kowonsik/RPiLogger/master/material/logger.png)
+
+
   - 소프트웨어
     - Raspbian : 라즈베리파이 OS
     - openTSDB : 시계열 데이터베이스
