@@ -50,8 +50,9 @@
 - 자바 설정
 <pre>
     java -version
-    (버전 몇이면 되는지? 기존 BerePi JAVA로 사용 가능한지? 아니면 기존 삭제 및 새롭게 설치는 어떻게?)
+      (1.6 이상의 JDK가 설치되어 있어야 함) 
     which java
+      (라즈베리파이 오라클 자바 설치 방법 : sudo apt-get update && sudo apt-get install oracle-java7-jdk )
 
     vi /etc/profile
       제일 마지막 줄에 아래 3출 추가
