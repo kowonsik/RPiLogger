@@ -74,7 +74,7 @@
     hbase_rootdir=${TMPDIR-'/usr/local/hadoop'}/tsdhbase
     iface=lo`uname | sed -n s/Darwin/0/p`
 
-    vi conf/hbase-site.xml
+    sudo vim conf/hbase-site.xml
     
     configuration 태그 사이의 내용을 넣어주면 됨
     
@@ -95,22 +95,22 @@
 ```
 
 ```
-    ./bin/start-hbase.sh
+    sudo sh ./bin/start-hbase.sh
 ```
 
   - GnuPlot 설치
 ```
      cd /usr/local
-     apt-get install gcc
-     apt-get install libgd2-xpm-dev
-     wget http://sourceforge.net/projects/gnuplot/files/gnuplot/4.6.3/gnuplot-4.6.3.tar.gz
-     tar zxvf gnuplot-4.6.3.tar.gz
+     sudo apt-get install gcc
+     sudo apt-get install libgd2-xpm-dev
+     sudo wget http://sourceforge.net/projects/gnuplot/files/gnuplot/4.6.3/gnuplot-4.6.3.tar.gz
+     sudo tar xvf gnuplot-4.6.3.tar.gz
      cd gnuplot-4.6.3
-     ./configure
-     make install
-     apt-get install gnuplot
+     sudo ./configure
+     sudo make install
+     sudo apt-get install gnuplot
 
-     apt-get install dh-autoreconf
+     sudo apt-get install dh-autoreconf
 ```
 
   - openTSDB 설치
@@ -119,7 +119,7 @@
      git clone git://github.com/OpenTSDB/opentsdb.git
 
      cd opentsdb
-     ./build.sh
+     sudo ./build.sh
 
 
      // 여기서 부터는 자동실행 할시 안해도 되는 부분임 //
@@ -144,9 +144,9 @@
   - Tcollector 설치
 ```
      cd /usr/local
-     git clone git://github.com/OpenTSDB/tcollector.git
+     sudo git clone git://github.com/OpenTSDB/tcollector.git
      cd tcollector
-     vi startstop
+     sudo vim startstop
 
      #TSD_HOST=dns.name.of.tsd 이부분에서 주석해제하고 IP를 적어주면 됨(아래처럼)
      TSD_HOST=127.0.0.1 (ip주소)
