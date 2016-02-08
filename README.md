@@ -66,14 +66,12 @@
   - hbase 설치
 ```
     cd /usr/local
-    mkdir data
-    wget http://www.apache.org/dist/hbase/stable/hbase-1.1.2-bin.tar.gz
-         http://www.apache.org/dist/hbase/stable/hbase-1.0.1.1-bin.tar.gz
-    tar xvfz hbase-1.1.2-bin.tar.gz
-     (hbase-1.0.1.1-bin.tar.gz)
-    cd hbase-1.1.2
+    sudo mkdir hadoop
+    sudo wget http://www.apache.org/dist/hbase/1.1.3/hbase-1.1.3-bin.tar.gz
+    sudo tar xvf hbase-1.1.3-bin.tar.gz
+    cd hbase-1.1.3
 
-    hbase_rootdir=${TMPDIR-'/usr/local/data'}/tsdhbase
+    hbase_rootdir=${TMPDIR-'/usr/local/hadoop'}/tsdhbase
     iface=lo`uname | sed -n s/Darwin/0/p`
 
     vi conf/hbase-site.xml
@@ -83,6 +81,7 @@
      <?xml version="1.0"?>
      <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
      <configuration>
+
        <property>
          <name>hbase.rootdir</name>
          <value>file:///DIRECTORY/hbase</value>
@@ -91,6 +90,7 @@
          <name>hbase.zookeeper.property.dataDir</name>
          <value>/DIRECTORY/zookeeper</value>
         </property>
+
      </configuration>
 ```
 
