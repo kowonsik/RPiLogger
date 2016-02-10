@@ -68,6 +68,7 @@
     cd /usr/local
     sudo mkdir hadoop
     sudo wget http://www.apache.org/dist/hbase/1.1.3/hbase-1.1.3-bin.tar.gz
+    (1.1.3은 아직 설치 성공 못 했음, hadoop native lib 문제, http://archive.apache.org/dist/hbase/1.0.1.1/hbase-1.0.1.1-bin.tar.gz)
     sudo tar xvf hbase-1.1.3-bin.tar.gz
     cd hbase-1.1.3
 
