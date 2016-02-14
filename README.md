@@ -145,9 +145,8 @@
 
 ```
   - 로그파일 설정
+    - 파일 위치 : /opentsdb/src/logback.xml
 ```
-.../opentsdb/src/logback.xml
-
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
   <file>/var/log/opentsdb/opentsdb.log</file>
   <append>true</append>
@@ -168,12 +167,10 @@
     <pattern>%d{HH:mm:ss.SSS} %-5level [%logger{0}.%M] - %msg%n</pattern>
   </encoder>
 </appender>
-
-~~~~~
+그리고
 <root level="info">
    <appender-ref ref="FILE"/>
 </root>
-
 ```
 
   - 자동실행 내용
