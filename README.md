@@ -197,6 +197,8 @@ sudo ./startstop start
 
      #TSD_HOST=dns.name.of.tsd 이부분에서 주석해제하고 IP를 적어주면 됨(아래처럼)
      TSD_HOST=127.0.0.1 (ip주소)
+     
+     wget https://raw.githubusercontent.com/kowonsik/tsdb/master/sect_tcp.py
 ```
 
 -----
