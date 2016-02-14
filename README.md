@@ -50,6 +50,7 @@
 - 자바 설정
 <pre>
     이제는 ..../hbase/hbase-env.conf 에 설정을 해 주면됨
+    (참고) 
     이전방법
     java -version
       (1.6 이상의 JDK가 설치되어 있어야 함) 
@@ -75,6 +76,7 @@
     cd hbase-1.1.3
 
     hbase_rootdir=${TMPDIR-'/usr/local/hadoop'}/tsdhbase
+    여기 경로는 실제 설치된 위치임
     iface=lo`uname | sed -n s/Darwin/0/p`
 
     sudo vim conf/hbase-site.xml
