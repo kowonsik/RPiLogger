@@ -74,15 +74,15 @@
     (1.1.3은 아직 설치 성공 못 했음, hadoop native lib 문제, http://archive.apache.org/dist/hbase/1.0.1.1/hbase-1.0.1.1-bin.tar.gz)
     sudo tar xvf hbase-1.1.3-bin.tar.gz
     cd hbase-1.1.3
-
+    
+    (아래 두줄은 사용하지 않아도 됨)
     hbase_rootdir=${TMPDIR-'/usr/local/hadoop'}/tsdhbase
-    여기 경로는 실제 설치된 위치임
     iface=lo`uname | sed -n s/Darwin/0/p`
 
     sudo vim conf/hbase-site.xml
     
     configuration 태그 사이의 내용을 넣어주면 됨
-    
+    (DIRECTORY 경로는 hbase 와 zookeeper 의 temp 파일들을 저장할 위치)
      <?xml version="1.0"?>
      <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
      <configuration>
@@ -125,12 +125,10 @@
 
      cd opentsdb
      sudo ./build.sh
-
-
+     sudo env COMPRESSION=NONE HBASE_HOME=/usr/local/hbase-1.0.1.1 ./src/create_table.sh
+     (HBASE_HOME은 설치되어 있는 위치)
+     
      // 여기서 부터는 자동실행 할시 안해도 되는 부분임 //
-     
-     env COMPRESSION=NONE HBASE_HOME=/usr/local/hbase-1.0.1.1 ./src/create_table.sh
-     
      tsdtmp=${TMPDIR-'/usr/local/data'}/tsd
      mkdir -p "$tsdtmp"
      
