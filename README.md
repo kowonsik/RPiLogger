@@ -142,6 +142,38 @@
      실행 후에는 Ctl + a + d 로 빠져나옴
      
      // 여기까지 //
+
+```
+  - 로그파일 설정
+```
+.../opentsdb/src/logback.xml
+
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+  <file>/var/log/opentsdb/opentsdb.log</file>
+  <append>true</append>
+
+  <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">
+    <fileNamePattern>/var/log/opentsdb/opentsdb.log.%i</fileNamePattern>
+    <minIndex>1</minIndex>
+    <maxIndex>3</maxIndex>
+  </rollingPolicy>
+
+  <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">
+    <maxFileSize>128MB</maxFileSize>
+  </triggeringPolicy>
+
+  <!-- encoders are assigned the type
+       ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+  <encoder>
+    <pattern>%d{HH:mm:ss.SSS} %-5level [%logger{0}.%M] - %msg%n</pattern>
+  </encoder>
+</appender>
+
+~~~~~
+<root level="info">
+   <appender-ref ref="FILE"/>
+</root>
+
 ```
 
   - 자동실행 내용
