@@ -49,6 +49,8 @@
 
 - 자바 설정
 <pre>
+    이제는 ..../hbase/hbase-env.conf 에 설정을 해 주면됨
+    이전방법
     java -version
       (1.6 이상의 JDK가 설치되어 있어야 함) 
     which java
