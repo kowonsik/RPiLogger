@@ -62,7 +62,6 @@
       JAVA_HOME=/usr/
       export JAVA_HOME
       export PATH=$PATH:$JAVA_HOME/bin
-
     source /etc/profile
 </pre>
 
@@ -72,8 +71,8 @@
     sudo mkdir hadoop
     sudo wget http://www.apache.org/dist/hbase/1.1.3/hbase-1.1.3-bin.tar.gz
     (1.1.3은 아직 설치 성공 못 했음, hadoop native lib 문제, http://archive.apache.org/dist/hbase/1.0.1.1/hbase-1.0.1.1-bin.tar.gz)
-    sudo tar xvf hbase-1.1.3-bin.tar.gz
-    cd hbase-1.1.3
+    sudo tar xvf hbase-1.1.1-bin.tar.gz
+    cd hbase-1.1.1
     
     (아래 두줄은 사용하지 않아도 됨)
     hbase_rootdir=${TMPDIR-'/usr/local/hadoop'}/tsdhbase
@@ -83,6 +82,7 @@
     
     configuration 태그 사이의 내용을 넣어주면 됨
     (DIRECTORY 경로는 hbase 와 zookeeper 의 temp 파일들을 저장할 위치)
+    
      <?xml version="1.0"?>
      <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
      <configuration>
@@ -145,7 +145,7 @@
 
 ```
   - 로그파일 설정
-    - 파일 위치 : /opentsdb/src/logback.xml
+    - 설정 파일 위치 : /opentsdb/src/logback.xml
 ```
     <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
   <file>/var/log/opentsdb/opentsdb.log</file>
