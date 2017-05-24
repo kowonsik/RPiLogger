@@ -88,6 +88,22 @@ Ubuntu  JDK 설치
 
 
   - hbase 설치
+  
+'''
+작성사례
+<configuration>
+<property>
+<name>hbase.rootdir</name>
+<value>file:///usr/local/hadoop/tmp/hbase</value>
+</property>
+<property>
+<name>hbase.zookeeper.property.dataDir</name>
+<value>/usr/local/hadoop/tmp/zookeeper</value>
+</property>
+</configuration>
+'''
+  
+  
 ```
     cd /usr/local
     sudo mkdir hadoop
@@ -121,23 +137,6 @@ Ubuntu  JDK 설치
 
      </configuration>
 ```
-
-<pre>
-
-작성사례
-
-  <configuration>
-    <property>
-      <name>hbase.rootdir</name>
-      <value>file:///usr/local/hadoop/tmp/hbase</value>
-    </property>
-    <property>
-      <name>hbase.zookeeper.property.dataDir</name>
-      <value>/usr/local/hadoop/tmp/zookeeper</value>
-    </property>
-  </configuration>
-</pre>
-
 
 ```
     sudo sh ./bin/start-hbase.sh
