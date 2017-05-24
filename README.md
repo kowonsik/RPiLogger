@@ -65,12 +65,16 @@
 </pre>
 
 <pre>
+Ubuntu  JDK 설치
 1. OpenJDK 제거
-$ sudo apt-get purge openjdk*
+  $ sudo apt-get purge openjdk*
+
 2. repository 추가
-$ sudo add-apt-repository ppa:webupd8team/java
+  $ sudo add-apt-repository ppa:webupd8team/java
+
 3. repository index 업데이트
-$ sudo apt-get update
+  $ sudo apt-get update
+
 4. JDK 설치
 아래의 세가지 버전 중에 자신이 필요한 버전을 설치한다.
 – Java 8 설치
