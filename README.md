@@ -95,6 +95,7 @@ Ubuntu  JDK 설치
     (1.1.3은 아직 설치 성공 못 했음, hadoop native lib 문제, http://archive.apache.org/dist/hbase/1.0.1.1/hbase-1.0.1.1-bin.tar.gz)
     sudo tar xvf hbase-1.1.1-bin.tar.gz
     cd hbase-1.1.1
+    ## 주의  -- 현재 지원 버전확인 필요 hbase/1.1.10
     
     (아래 두줄은 사용하지 않아도 됨)
     hbase_rootdir=${TMPDIR-'/usr/local/hadoop'}/tsdhbase
