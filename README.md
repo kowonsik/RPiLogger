@@ -122,6 +122,23 @@ Ubuntu  JDK 설치
      </configuration>
 ```
 
+<pre>
+
+작성사례
+
+ 23 <configuration>
+ 24   <property>
+ 25     <name>hbase.rootdir</name>
+ 26     <value>file:///usr/local/hadoop/tmp/hbase</value>
+ 27   </property>
+ 28   <property>
+ 29     <name>hbase.zookeeper.property.dataDir</name>
+ 30     <value>/usr/local/hadoop/tmp/zookeeper</value>
+ 31   </property>
+ 32 </configuration>
+</pre>
+
+
 ```
     sudo sh ./bin/start-hbase.sh
 ```
