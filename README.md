@@ -56,7 +56,6 @@
       (1.6 이상의 JDK가 설치되어 있어야 함) 
     which java
       (라즈베리파이 오라클 자바 설치 방법 : sudo apt-get update && sudo apt-get install oracle-java7-jdk )
-
     vi /etc/profile
       제일 마지막 줄에 아래 3출 추가
       JAVA_HOME=/usr/
@@ -64,6 +63,25 @@
       export PATH=$PATH:$JAVA_HOME/bin
     source /etc/profile
 </pre>
+
+<pre>
+1. OpenJDK 제거
+$ sudo apt-get purge openjdk*
+2. repository 추가
+$ sudo add-apt-repository ppa:webupd8team/java
+3. repository index 업데이트
+$ sudo apt-get update
+4. JDK 설치
+아래의 세가지 버전 중에 자신이 필요한 버전을 설치한다.
+– Java 8 설치
+  $ sudo apt-get install oracle-java8-installer
+– Java 7 설치
+  $ sudo apt-get install oracle-java7-installer
+– Java 6 설치
+  $ sudo apt-get install oracle-java6-installer
+</pre>
+
+
 
   - hbase 설치
 ```
