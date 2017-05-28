@@ -89,9 +89,12 @@
 </pre>
 
 <pre>
-'/etc/hosts' 파일에서 '127.0.1.1'을 찾아서 '127.0.0.1'로 수정
- $ sudo vi /etc/hosts
- 127.0.0.1       server01
+  '/etc/hosts' 파일에서 '127.0.1.1'을 찾아서 '127.0.0.1'로 수정
+   $ sudo vi /etc/hosts
+   127.0.0.1       server01
+
+   Telnet 설치, root 로그인 확인
+
 </pre>
 
   - hbase 설치
@@ -149,7 +152,23 @@
 
 ```
   (중요, 실행)  sudo sh ./bin/start-hbase.sh
-  확인 방법
+
+  (확인 방법)
+  zookeeper 연결 확인, http://hbase.apache.org/book.html#getting_started
+  telnet localhost 2181
+  stats
+   아래처럼 회신이 와야 함
+    Zookeeper version: 3.4.3-cdh4.0.1--1, built on 06/28/2012 23:59 GMT
+    Clients:
+
+    Latency min/avg/max: 0/0/677
+    Received: 4684478
+    Sent: 4687034
+    Outstanding: 0
+    Zxid: 0xb00187dd0
+    Mode: leader
+    Node count: 127182
+    Connection closed by foreign host.
 
 ```
 
