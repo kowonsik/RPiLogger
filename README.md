@@ -262,7 +262,9 @@ sudo ./startstop start
      cd /usr/local
      sudo git clone git://github.com/OpenTSDB/tcollector.git
      cd tcollector
-     sudo vim startstop
+     sudo python tcollector.py -H <TSDB Host IP> -p <TSDB port> -D
+     < 아래는 OLD version >
+     sudo vim startstop
 
      #TSD_HOST=dns.name.of.tsd 이부분에서 주석해제하고 IP를 적어주면 됨(아래처럼)
      TSD_HOST=127.0.0.1 (ip주소)
