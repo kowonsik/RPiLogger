@@ -128,7 +128,7 @@ Ubuntu  JDK 설치
 ```
 
 
-'''
+<pre>
   작성사례
   <configuration>
     <property>
@@ -142,7 +142,7 @@ Ubuntu  JDK 설치
   </configuration>
 
    ** 주의 : file:// 까지 작성하고, 이후 경로 작성
-'''
+</pre>
 
 
 
