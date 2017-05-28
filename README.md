@@ -49,47 +49,50 @@
 
 - 자바 설정
 <pre>
-    이제는 ..../hbase/hbase-env.conf 에 설정을 해 주면됨
+    이제는 ..../hbase/hbase-env.conf 에 설정을 해 주면됨, JAVA_HOME=/usr/
 
     (참고)  이전방법
-    java -version
+      java -version
       (1.6 이상의 JDK가 설치되어 있어야 함)
-    which java
+      which java
       (라즈베리파이 오라클 자바 설치 방법 : sudo apt-get update && sudo apt-get install oracle-java7-jdk )
-    vi /etc/profile
+      vi /etc/profile
       제일 마지막 줄에 아래 3출 추가
       JAVA_HOME=/usr/
       export JAVA_HOME
       export PATH=$PATH:$JAVA_HOME/bin
-    source /etc/profile
+      이후 실행 : source /etc/profile
 </pre>
 
+<pre>    
+     Ubuntu  JDK 설치
+      1. OpenJDK 제거
+       $ sudo apt-get purge openjdk*
+
+      2. repository 추가
+       $ sudo add-apt-repository ppa:webupd8team/java
+
+      3. repository index 업데이트
+       $ sudo apt-get update
+
+      4. JDK 설치
+       아래의 세가지 버전 중에 자신이 필요한 버전을 설치한다.
+       – Java 8 설치
+       $ sudo apt-get install oracle-java8-installer
+       – Java 7 설치
+       $ sudo apt-get install oracle-java7-installer
+       – Java 6 설치
+       $ sudo apt-get install oracle-java6-installer
+
+       근래 버전7은 없고, 8로 설치
+
+</pre>
 
 <pre>
-Ubuntu  JDK 설치
-1. OpenJDK 제거
-  $ sudo apt-get purge openjdk*
-
-2. repository 추가
-  $ sudo add-apt-repository ppa:webupd8team/java
-
-3. repository index 업데이트
-  $ sudo apt-get update
-
-4. JDK 설치
-아래의 세가지 버전 중에 자신이 필요한 버전을 설치한다.
-  – Java 8 설치
-  $ sudo apt-get install oracle-java8-installer
-  – Java 7 설치
-  $ sudo apt-get install oracle-java7-installer
-  – Java 6 설치
-  $ sudo apt-get install oracle-java6-installer
-
-근래 버전7은 없고, 8로 설치
-
+'/etc/hosts' 파일에서 '127.0.1.1'을 찾아서 '127.0.0.1'로 수정
+ $ sudo vi /etc/hosts
+ 127.0.0.1       server01
 </pre>
-
-
 
   - hbase 설치
 
@@ -128,26 +131,26 @@ Ubuntu  JDK 설치
 ```
 
 
-<pre>
+```
   작성사례
   <configuration>
     <property>
-    <name>hbase.rootdir</name>
-    <value>file:///usr/local/hadoop/tmp/hbase</value>
+      <name>hbase.rootdir</name>
+      <value>file:///usr/local/hadoop/tmp/hbase</value>
     </property>
     <property>
-    <name>hbase.zookeeper.property.dataDir</name>
-    <value>/usr/local/hadoop/tmp/zookeeper</value>
+      <name>hbase.zookeeper.property.dataDir</name>
+      <value>/usr/local/hadoop/tmp/zookeeper</value>
     </property>
   </configuration>
-
-   ** 주의 : file:// 까지 작성하고, 이후 경로 작성
-</pre>
-
+  ** 주의 : file:// 까지 작성하고, 이후 경로 작성
+```
 
 
 ```
-    sudo sh ./bin/start-hbase.sh
+  (중요, 실행)  sudo sh ./bin/start-hbase.sh
+  확인 방법
+
 ```
 
   - GnuPlot 설치
