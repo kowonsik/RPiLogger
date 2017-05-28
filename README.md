@@ -11,7 +11,7 @@
   - 지금까지 WSN 시스템은 원격 서버 저장 기능을 이용하여, 데이터를 손실없이 수집, 저장하려고 노력하였고, 안정화 비용이 너무 높았음
     - 안정적인 무선 네트워크 구성과 100% 수신율의 데이터 저장은 여러가지 문제들로 쉽게 확보하기 어려웠다
     - RPI2는 저렴한 가격에 안정적인 Linux 시스템과 센서 하드웨어 연결을 제공하기 때문에, 안정적 로컬 데이터 저장 장치로 활용될 수 있다
-    
+
 1. 목적
   - 쉽게 사용 가능하고 저렴한 데이터 로거를 만들고 싶음(라즈베리파이)
   - 라즈베리파이에 시계열데이터베이스를 설치하여 대용량의 센싱 데이터를 고속으로 처리
@@ -24,7 +24,7 @@
     - LED 보드
     - Kmote
     - 통합센서
-    
+
 ![pic](https://raw.githubusercontent.com/kowonsik/RPiLogger/master/material/logger.png)
 
 
@@ -50,10 +50,10 @@
 - 자바 설정
 <pre>
     이제는 ..../hbase/hbase-env.conf 에 설정을 해 주면됨
-    (참고) 
-    이전방법
+
+    (참고)  이전방법
     java -version
-      (1.6 이상의 JDK가 설치되어 있어야 함) 
+      (1.6 이상의 JDK가 설치되어 있어야 함)
     which java
       (라즈베리파이 오라클 자바 설치 방법 : sudo apt-get update && sudo apt-get install oracle-java7-jdk )
     vi /etc/profile
@@ -63,6 +63,7 @@
       export PATH=$PATH:$JAVA_HOME/bin
     source /etc/profile
 </pre>
+
 
 <pre>
 Ubuntu  JDK 설치
@@ -77,33 +78,21 @@ Ubuntu  JDK 설치
 
 4. JDK 설치
 아래의 세가지 버전 중에 자신이 필요한 버전을 설치한다.
-– Java 8 설치
+  – Java 8 설치
   $ sudo apt-get install oracle-java8-installer
-– Java 7 설치
+  – Java 7 설치
   $ sudo apt-get install oracle-java7-installer
-– Java 6 설치
+  – Java 6 설치
   $ sudo apt-get install oracle-java6-installer
+
+근래 버전7은 없고, 8로 설치
+
 </pre>
 
 
 
   - hbase 설치
-  
-'''
-작성사례
-<configuration>
-<property>
-<name>hbase.rootdir</name>
-<value>file:///usr/local/hadoop/tmp/hbase</value>
-</property>
-<property>
-<name>hbase.zookeeper.property.dataDir</name>
-<value>/usr/local/hadoop/tmp/zookeeper</value>
-</property>
-</configuration>
-'''
-  
-  
+
 ```
     cd /usr/local
     sudo mkdir hadoop
@@ -111,17 +100,17 @@ Ubuntu  JDK 설치
     (1.1.3은 아직 설치 성공 못 했음, hadoop native lib 문제, http://archive.apache.org/dist/hbase/1.0.1.1/hbase-1.0.1.1-bin.tar.gz)
     sudo tar xvf hbase-1.1.1-bin.tar.gz
     cd hbase-1.1.1
-    ## 주의  -- 현재 지원 버전확인 필요 hbase/1.1.10
-    
+    ## 주의  -- 현재 지원 버전확인 필요 hbase/1.1.10 (PC Ubuntu에서는 동작 확인)
+
     (아래 두줄은 사용하지 않아도 됨)
-    hbase_rootdir=${TMPDIR-'/usr/local/hadoop'}/tsdhbase
-    iface=lo`uname | sed -n s/Darwin/0/p`
+       hbase_rootdir=${TMPDIR-'/usr/local/hadoop'}/tsdhbase
+       iface=lo`uname | sed -n s/Darwin/0/p`
 
     sudo vim conf/hbase-site.xml
-    
+
     configuration 태그 사이의 내용을 넣어주면 됨
     (DIRECTORY 경로는 hbase 와 zookeeper 의 temp 파일들을 저장할 위치)
-    
+
      <?xml version="1.0"?>
      <?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
      <configuration>
@@ -137,6 +126,25 @@ Ubuntu  JDK 설치
 
      </configuration>
 ```
+
+
+'''
+  작성사례
+  <configuration>
+    <property>
+    <name>hbase.rootdir</name>
+    <value>file:///usr/local/hadoop/tmp/hbase</value>
+    </property>
+    <property>
+    <name>hbase.zookeeper.property.dataDir</name>
+    <value>/usr/local/hadoop/tmp/zookeeper</value>
+    </property>
+  </configuration>
+
+   ** 주의 : file:// 까지 작성하고, 이후 경로 작성
+'''
+
+
 
 ```
     sudo sh ./bin/start-hbase.sh
@@ -166,20 +174,20 @@ Ubuntu  JDK 설치
      sudo ./build.sh
      sudo env COMPRESSION=NONE HBASE_HOME=/usr/local/hbase-1.0.1.1 ./src/create_table.sh
      (HBASE_HOME은 설치되어 있는 위치)
-     
+
      // 여기서 부터는 자동실행 할시 안해도 되는 부분임 //
      tsdtmp=${TMPDIR-'/usr/local/data'}/tsd
      mkdir -p "$tsdtmp"
-     
-     여기서 screen 으로 
+
+     여기서 screen 으로
      screen -dmS tsdb
      screen -list
      tsdb로 -r tsdb
-     
+
      ./build/tsdb tsd --port=4242 --staticroot=./build/staticroot --cachedir=/usr/local/data --auto-metric
-     
+
      실행 후에는 Ctl + a + d 로 빠져나옴
-     
+
      // 여기까지 //
 
 ```
@@ -220,7 +228,7 @@ sudo ./start-hbase.sh
 
 cd /usr/local/opentsdb
 JAVA_HOME=/usr COMPRESSION="NONE" HBASE_HOME="/usr/local/hbase-1.0.1.1" ./src/create_table.sh
-tsdtmp=${TMPDIR-'/usr/local/data'}/tsd 
+tsdtmp=${TMPDIR-'/usr/local/data'}/tsd
 sudo screen -dmS tsdb ./build/tsdb tsd --port=4242 --staticroot=build/staticroot --cachedir=/usr/local/data --auto-metric &
 
 cd /usr/local/tcollector
@@ -236,7 +244,7 @@ sudo ./startstop start
 
      #TSD_HOST=dns.name.of.tsd 이부분에서 주석해제하고 IP를 적어주면 됨(아래처럼)
      TSD_HOST=127.0.0.1 (ip주소)
-     
+
      wget https://raw.githubusercontent.com/kowonsik/tsdb/master/sect_tcp.py
 ```
 
@@ -263,14 +271,13 @@ sudo ./startstop start
     로거 : python talk.py server LOGGER-001-4242 localhost 4242
     놋북 : python talk.py client LOGGER-001-4242 4242
     웹   : localhost:4242
-    
+
     채널 : http://125.7.128.54/stalk/master/admin/api/entry/
-    
+
     stalk ddns 안될경우---
-    
+
     sudo service stalk restart
     sudo service stalk-binder restart
     sudo service stlak-revproxy restart
     sudo service nginx restart
 ```
-    
