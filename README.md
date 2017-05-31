@@ -242,20 +242,19 @@
 </root>
 ```
 
-  - 자동실행 내용
-```
-cd /usr/local/hbase-1.0.1.1/bin/
-sudo ./stop-hbase.sh
-sudo ./start-hbase.sh
+  -  자동실행 내용
+<pre>
+  cd /usr/local/hbase-1.0.1.1/bin/
+  sudo ./stop-hbase.sh
+  sudo ./start-hbase.sh
+  cd /usr/local/opentsdb
+  sudo screen -dmS tsdb ./build/tsdb tsd --port=4242 --staticroot=build/staticroot --cachedir=/usr/local/data --auto-metric &
+  cd /usr/local/tcollector
+  sudo ./startstop start
+  (openTSDB 2.3 부터는 sudo python /usr/local/tcollector/tcollector.py -H 127.0.0.1 -p 4242 -D 로 변경)
+  (2017/5/30) sudo ./build/tsdb tsd --port=4242 --staticroot=build/staticroot --cachedir=/usr/local/hadoop/tmp/opentsdb --auto-metric
 
-cd /usr/local/opentsdb
-JAVA_HOME=/usr COMPRESSION="NONE" HBASE_HOME="/usr/local/hbase-1.0.1.1" ./src/create_table.sh
-tsdtmp=${TMPDIR-'/usr/local/data'}/tsd
-sudo screen -dmS tsdb ./build/tsdb tsd --port=4242 --staticroot=build/staticroot --cachedir=/usr/local/data --auto-metric &
-
-cd /usr/local/tcollector
-sudo ./startstop start
-```
+</pre>
 
   - Tcollector 설치
 ```
@@ -282,6 +281,15 @@ sudo ./startstop start
 ```
 
 -----
+
+< Duplication error>
+  - 동일한 시간에 동리 메트릭에 여러개의 데이터가 들어가면 TSD 는 한개의 데이터만 선택을 못해서, 에러가 발생함
+  - 그중 제일 마지막 값으로 선택하고, 실행에러 없애려면,
+  - sudo ./build/tsdb fsck --fix --resolve-duplicates 2016/03/00 2017/05/01 sum test_daily_led 를 실행해주면 됨
+  - 매번 이렇게 fix 작업해 주기가 어려우니, 아예 컴파일타임에 옵션으로 올리면 됨
+  - sudo vim src/opentsdb.conf 에 tsd.storage.fix_duplicates = true 입력하고, /usr/local/opentsdb/build.sh 을 실행하여 빌드함
+  - 확인 : http://IP:4242/api/config
+
 
 < 센서 >
 
