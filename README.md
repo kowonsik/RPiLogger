@@ -84,7 +84,8 @@
        – Java 6 설치
        $ sudo apt-get install oracle-java6-installer
 
-       근래 버전7은 없고, 8로 설치
+       근래 ubuntu 버전7은 없고, 8로 설치
+       raspberrypi는 버전7 설치 가능
 
 </pre>
 
