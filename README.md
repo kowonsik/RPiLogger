@@ -288,8 +288,8 @@
   - 그중 제일 마지막 값으로 선택하고, 실행에러 없애려면,
   - sudo ./build/tsdb fsck --fix --resolve-duplicates 2016/03/00 2017/05/01 sum {metric_name} 를 실행해주면 됨
   - 매번 이렇게 fix 작업해 주기가 어려우니, 아예 컴파일타임에 옵션으로 올리면 됨
-  - sudo vim src/opentsdb.conf 에 tsd.storage.fix_duplicates = true 입력하고, 
-  - 이 설정 파일을 /etc/opentsdb.conf 로 복사하면, open tsdb 실행시, 설정을 읽어들임
+  - sudo vim src/opentsdb.conf 에 tsd.storage.fix_duplicates = true 입력하고,
+  - 이 설정 파일을 /etc/opentsdb.conf 로 복사하면, open tsdb 실행시, 설정을 읽어들임
   - 확인 : http://IP:4242/api/config
 
 
