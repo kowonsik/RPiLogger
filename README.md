@@ -286,10 +286,11 @@
 < Duplication error>
   - 동일한 시간에 동리 메트릭에 여러개의 데이터가 들어가면 TSD 는 한개의 데이터만 선택을 못해서, 에러가 발생함
   - 그중 제일 마지막 값으로 선택하고, 실행에러 없애려면,
-  - sudo ./build/tsdb fsck --fix --resolve-duplicates 2016/03/00 2017/05/01 sum test_daily_led 를 실행해주면 됨
+  - sudo ./build/tsdb fsck --fix --resolve-duplicates 2016/03/00 2017/05/01 sum {metric_name} 를 실행해주면 됨
   - 매번 이렇게 fix 작업해 주기가 어려우니, 아예 컴파일타임에 옵션으로 올리면 됨
-  - sudo vim src/opentsdb.conf 에 tsd.storage.fix_duplicates = true 입력하고, /usr/local/opentsdb/build.sh 을 실행하여 빌드함
-  - 확인 : http://IP:4242/api/config
+  - sudo vim src/opentsdb.conf 에 tsd.storage.fix_duplicates = true 입력하고, 
+  - 이 설정 파일을 /etc/opentsdb.conf 로 복사하면, open tsdb 실행시, 설정을 읽어들임
+  - 확인 : http://IP:4242/api/config
 
 
 < 센서 >
