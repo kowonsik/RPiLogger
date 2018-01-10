@@ -155,6 +155,9 @@
 
 ```
   (중요, 실행)  sudo sh ./bin/start-hbase.sh
+  근래 사용하는 쉘명령
+  cd /usr/local/hadoop/hbase-1.1.13/bin
+  JAVA_HOME=/usr/lib/jvm/java-8-oracle/jre/bin sh start-hbase.sh
 
   (확인 방법)
   zookeeper 연결 확인, http://hbase.apache.org/book.html#getting_started
