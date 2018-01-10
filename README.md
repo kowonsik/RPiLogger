@@ -259,7 +259,9 @@
 
   - Tcollector 설치
 ```
-     cd /usr/local
+     Tcollector 굳이 설치안해도 됨.
+     현재는 openTSDB의 CLI put 방식으로 socket 입력하면 데이터가 잘 들어가서 그것을 사용   
+     cd /usr/local
      sudo git clone git://github.com/OpenTSDB/tcollector.git
      cd tcollector
      sudo python tcollector.py -H <TSDB Host IP> -p <TSDB port> -D
