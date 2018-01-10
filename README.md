@@ -95,6 +95,8 @@
    127.0.0.1       server01
 
    Telnet 설치, root 로그인 확인
+   (ubuntu) Telnet 설치 및 root 접속 허가
+   http://thisstory.tistory.com/entry/%EC%9A%B0%EB%B6%84%ED%88%AC-%ED%85%94%EB%84%B7-%EC%84%A4%EC%B9%98-%ED%85%94%EB%84%B7-%EB%A3%A8%ED%8A%B8-%EB%A1%9C%EA%B7%B8%EC%9D%B8-%ED%97%88%EC%9A%A9
 
 </pre>
 
