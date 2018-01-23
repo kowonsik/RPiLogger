@@ -96,7 +96,11 @@
 
    Telnet 설치, root 로그인 확인
    (ubuntu) Telnet 설치 및 root 접속 허가
+   sudo apt-get install telnetd
+   sudo apt-get install xinetd
+   
    http://thisstory.tistory.com/entry/%EC%9A%B0%EB%B6%84%ED%88%AC-%ED%85%94%EB%84%B7-%EC%84%A4%EC%B9%98-%ED%85%94%EB%84%B7-%EB%A3%A8%ED%8A%B8-%EB%A1%9C%EA%B7%B8%EC%9D%B8-%ED%97%88%EC%9A%A9
+   
 
 </pre>
 
@@ -105,12 +109,15 @@
 ```
     cd /usr/local
     sudo mkdir hadoop
+    
     sudo wget http://www.apache.org/dist/hbase/1.1.3/hbase-1.1.3-bin.tar.gz
     (1.1.3은 아직 설치 성공 못 했음, hadoop native lib 문제, http://archive.apache.org/dist/hbase/1.0.1.1/hbase-1.0.1.1-bin.tar.gz)
-    sudo tar xvf hbase-1.1.1-bin.tar.gz
+    sudo tar xvf hbase-1.1.1-bin.tar.gz   
     cd hbase-1.1.1
     ## 주의  -- 현재 지원 버전확인 필요 hbase/1.1.10 (PC Ubuntu에서는 동작 확인)
 
+    sudo wget http://www.apache.org/dist/hbase/1.1.13/hbase-1.1.13-bin.tar.gz
+    
     (아래 두줄은 사용하지 않아도 됨)
        hbase_rootdir=${TMPDIR-'/usr/local/hadoop'}/tsdhbase
        iface=lo`uname | sed -n s/Darwin/0/p`
