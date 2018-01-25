@@ -211,6 +211,7 @@
      sudo ./build.sh
      sudo env COMPRESSION=NONE HBASE_HOME=/usr/local/hbase-1.0.1.1 ./src/create_table.sh
      (HBASE_HOME은 설치되어 있는 위치)
+     sudo env JAVA_HOME=/usr/lib/jvm/java-8-oracle/jre COMPRESSION=NONE HBASE_HOME=/usr/local/hbase-1.1.13 ./src/create_table.sh
 
      // 여기서 부터는 자동실행 할시 안해도 되는 부분임 //
      tsdtmp=${TMPDIR-'/usr/local/data'}/tsd
