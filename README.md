@@ -310,9 +310,10 @@
 
 
 < /etc/opentsdb.conf 에 추가해야할 내용 >
-tsd.storage.fix_duplicates = true
-tsd.http.request.max_chunk = 65536
-tsd.http.request.enable_chunked=true
+
+   - tsd.storage.fix_duplicates = true
+   - tsd.http.request.max_chunk = 65536
+   - tsd.http.request.enable_chunked=true
 
 
 
