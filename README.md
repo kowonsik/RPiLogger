@@ -1,6 +1,6 @@
 # RPiLogger (라즈베리파이 데이터로거)
 
-1. 개요
+## 개요
   - 대용량의 측정데이터를 장시간 저장하는 안정적인 데이터로거 제품은 고가임
   - 데이터 접근 측면에서 저장을 주변 로컬 스토리지를 이용하는 경우가 대부분임. 클라우드로 데이터가 빠져나가게 되면 데이터 소유권이 애매해지는 현상이 발생함
   - 시큐리티의 경우에도, 공장/빌딩/가정의 센서 측정 데이터가 외부에 저장되는 것에 대한 반감이 있음. 구글 메일의 경우도 사람들이 안심하고 자신의 개인 메일을 저장해 놓는 문화가 형성될때 까지 꽤 많은 시간이 소요됨
@@ -44,9 +44,9 @@
         - 시계열데이터베이스(openTSDB)
         - 센싱데이터 로컬에 저장 및 원격 전송
 
-1. 라즈베리파이에 시계열데이터베이스(openTSDB)설치
+## 라즈베리파이에 시계열데이터베이스(openTSDB)설치
 
-- 자바 설정
+### 자바 설정
 <pre>
     이제는 ..../hbase/hbase-env.conf 에 설정을 해 주면됨, JAVA_HOME=/usr/
 
@@ -103,7 +103,7 @@
 
 </pre>
 
-  - hbase 설치
+### hbase 설치
 
 ```
     cd /usr/local
@@ -184,7 +184,7 @@
 
 ```
 
-  - GnuPlot 설치
+### GnuPlot 설치
 ```
      cd /usr/local
      sudo apt-get install gcc
@@ -199,7 +199,7 @@
      sudo apt-get install dh-autoreconf
 ```
 
-  - openTSDB 설치
+### openTSDB 설치
 ```
      cd /usr/local
      git clone git://github.com/OpenTSDB/opentsdb.git
@@ -271,7 +271,7 @@
 
 </pre>
 
-  - Tcollector 설치
+  - Tcollector 설치 (2018년 기준. 사용하지 않아도 됨)
 ```
      Tcollector 굳이 설치안해도 됨.
      현재는 openTSDB의 CLI put 방식으로 socket 입력하면 데이터가 잘 들어가서 그것을 사용   
