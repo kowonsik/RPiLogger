@@ -100,6 +100,8 @@
    
    http://thisstory.tistory.com/entry/%EC%9A%B0%EB%B6%84%ED%88%AC-%ED%85%94%EB%84%B7-%EC%84%A4%EC%B9%98-%ED%85%94%EB%84%B7-%EB%A3%A8%ED%8A%B8-%EB%A1%9C%EA%B7%B8%EC%9D%B8-%ED%97%88%EC%9A%A9
    
+   그런데, 과연 root 로그인이 되어야 하는지는 확인 못함. 
+   ubuntu의 경우 root 로그인이 안되어도 hbase 동작함
 
 </pre>
 
